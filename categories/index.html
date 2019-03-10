@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="something about me">
-<meta name="keywords" content="diy BMW">
+  <meta name="description" content="something about car">
+<meta name="keywords" content="轮毂盖，车标diy BMW">
 <meta property="og:type" content="website">
 <meta property="og:title" content="categories">
 <meta property="og:url" content="midiyc.github.io/categories/index.html">
 <meta property="og:site_name" content="diy-club">
-<meta property="og:description" content="something about me">
+<meta property="og:description" content="something about car">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-07T12:09:26.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="something about me">
+<meta name="twitter:description" content="something about car">
 
 
 
@@ -249,7 +249,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">0</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">1</span></a>
 
   </li>
         
@@ -306,7 +306,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">3</span></a>
 
   </li>
 
@@ -424,10 +424,14 @@
             <div class="category-all-title">
               
               
-              暂无分类
+                
+                  
+                
+              
+              目前共计 1 个分类
             </div>
             <div class="category-all">
-              
+              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/宝马/">宝马</a><span class="category-list-count">1</span></li></ul>
             </div>
           </div>
         
@@ -473,7 +477,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">diyc</p>
-              <div class="site-description motion-element" itemprop="description">something about me</div>
+              <div class="site-description motion-element" itemprop="description">something about car</div>
           </div>
 
           
@@ -490,6 +494,23 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
               
                 
@@ -497,14 +518,20 @@
                 <div class="site-state-item site-state-tags">
                   
                     
+                      <a href="/tags/">
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">标签</span>
                   
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
                 </div>
               
             </nav>
@@ -689,6 +716,35 @@
   
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: true,
+    appId: 'myGjRQrgug0OzkWX6CvsV49O-gzGzoHsz',
+    appKey: 'Wtc1JrlVXvGgtbpjB2t9wsJA',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+</script>
+
+
 
 
 
@@ -1018,74 +1074,6 @@
 
 
   
-  
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $('.leancloud_visitors');
-
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
-        .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'zosiHOdfEvFQJjFkihRqUpmt-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'zosiHOdfEvFQJjFkihRqUpmt-gzGzoHsz',
-                'X-LC-Key': 'diVfjfO3xwyo5gbwyCUapoyj',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
-          
-        });
-    });
-  </script>
-
-
 
   
 
