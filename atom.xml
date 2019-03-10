@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>diy-club</title>
+  <title>汽车车标改装</title>
   
-  
+  <subtitle>宝马，奔驰，保时捷，路虎，大众，日产尼桑车标</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="midiyc.github.io/"/>
@@ -10,7 +10,7 @@
   <id>midiyc.github.io/</id>
   
   <author>
-    <name>diyc</name>
+    <name>diyclub</name>
     
   </author>
   
